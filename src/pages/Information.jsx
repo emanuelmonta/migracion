@@ -1,5 +1,7 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import ServiceCard from "../components/ServiceCard"
+import { beneficios } from "../data"
 function Information() {
   return (
     <>
@@ -17,53 +19,10 @@ function Information() {
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 class="font-bold text-gray-900 text-lg">Envío Express 24h</h3>
-              <p class="text-sm text-gray-600 mt-2">
-                Despachamos tu pedido el mismo día para que lo recibas sin esperas innecesarias.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 class="font-bold text-gray-900 text-lg">Garantía de 2 Años</h3>
-              <p class="text-sm text-gray-600 mt-2">
-                Todos nuestros productos cuentan con cobertura total ante cualquier defecto de fábrica.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                </svg>
-              </div>
-              <h3 class="font-bold text-gray-900 text-lg">Pago 100% Seguro</h3>
-              <p class="text-sm text-gray-600 mt-2">
-                Aceptamos tarjetas, transferencias y pagos fraccionados con cifrado de extremo a extremo.
-              </p>
-            </div>
-
-            <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="w-12 h-12 rounded-xl bg-yellow-100 text-yellow-600 flex items-center justify-center mb-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h3 class="font-bold text-gray-900 text-lg">30 Días de Prueba</h3>
-              <p class="text-sm text-gray-600 mt-2">
-                Si no te convence al probarlo, gestionamos la devolución gratuita sin preguntas.
-              </p>
-            </div>
+            {
+              beneficios.map((item) => 
+                {<ServiceCard data={item} />}
+            )}
           </div>
 
           <div class="max-w-3xl mx-auto">
